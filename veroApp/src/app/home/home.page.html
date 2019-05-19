@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Meus Dados
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Dados de Conta</ion-label>
+    </ion-list-header>
+    <ion-item>
+    <ion-card color="light" class="amount-card">
+        <ion-card-header>
+          <ion-card-subtitle>Saldo Disponível</ion-card-subtitle>
+          <ion-card-title>R$ {{userData.wallet.current_balance}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Dados Pessoais</ion-label>
+    </ion-list-header>
+    <ion-item [routerLink]="['/datainformation/', 'basic']">
+      <ion-icon slot="start" color="medium" name="person"></ion-icon>
+      <ion-label>Informações básicas</ion-label>
+      <ion-icon slot="end" color="success" name="checkmark" *ngIf="userData.user_information.basic.validated == 1"></ion-icon>
+    </ion-item>
+    <ion-item [routerLink]="['/datainformation/', 'residencial']">
+      <ion-icon slot="start" color="medium" name="pin"></ion-icon>
+      <ion-label>Residencial</ion-label>
+      <ion-icon slot="end" color="success" name="checkmark" *ngIf="userData.user_information.residencial.validated == 1"></ion-icon>
+    </ion-item>
+    <ion-item [routerLink]="['/datainformation/', 'phone']">
+      <ion-icon slot="start" color="medium" name="phone-portrait"></ion-icon>
+      <ion-label>Telefônicos</ion-label>
+      <ion-icon slot="end" color="success" name="checkmark" *ngIf="userData.user_information.phone.validated == 1"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

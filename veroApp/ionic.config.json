@@ -1,0 +1,7 @@
+{
+  "name": "veroApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

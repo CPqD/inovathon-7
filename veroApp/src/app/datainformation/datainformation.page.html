@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{info.title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="info.validated == 1">
+    <ion-item color="success">
+      <p text-wrap text-center>Os seus dados foram verificados com sucesso!</p>
+    </ion-item>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Comprovantes</ion-label>
+      </ion-list-header>
+
+      <div class="grid-container">
+        <ion-item *ngFor="let img of info.images">
+          <ion-img class="image" [src]="img"></ion-img>
+        </ion-item>
+      </div>
+      <ion-item *ngFor="let info of info.data">
+        <ion-label>{{info.key}}</ion-label>
+        <ion-text>{{info.value}}</ion-text>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="info.validated == 0">
+    <ion-item>
+      <p text-wrap text-center *ngIf="info.validated == 0">Por favor, envie um comprovante válido</p>
+    </ion-item>
+  </div>
+</ion-content>
