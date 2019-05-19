@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  veroserver2:
+    image: ${DOCKER_REGISTRY-}veroserver2
+    build:
+      context: .\VeroServer2
+      dockerfile: Dockerfile

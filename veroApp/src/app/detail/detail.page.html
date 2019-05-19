@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{nome}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-list *ngFor="let item of items">
+    <ion-item *ngFor="let dado of item.dados" (click)="apagar(dado)">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{dado}}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
